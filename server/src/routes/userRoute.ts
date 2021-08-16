@@ -3,12 +3,12 @@ import {Router} from 'express'
 import {userController} from '@controllers/userController'
 import {verifyAuth} from '@middleware/verifyAuth'
 
-const route = Router()
+const router = Router()
 
-route.put('/:id', verifyAuth, userController.update)
-route.delete('/:id', verifyAuth, userController.delete)
-route.get('/', verifyAuth, userController.getAll)
-route.get('/find/:id', userController.get)
-route.get('/stats', userController.getStatus)
+router.put('/:id', verifyAuth, userController.update)
+router.delete('/:id', verifyAuth, userController.delete)
+router.get('/', verifyAuth, userController.getAll)
+router.get('/find/:id', userController.get)
+router.get('/stats', userController.getStatus)
 
-export const UserRouter = route
+export const UserRouter = router
