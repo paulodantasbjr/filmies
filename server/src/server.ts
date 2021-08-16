@@ -7,6 +7,7 @@ import {config} from 'dotenv';
 import {AuthRouter} from '@route/authRoute'
 import {UserRouter} from '@route/userRoute'
 import {MovieRouter} from '@route/movieRoute'
+import {ListRoute} from '@route/listRoute'
 
 
 // Dotenv
@@ -35,6 +36,7 @@ connect(process.env.MONGO_URL, {
 app.use("/api/auth", AuthRouter);
 app.use("/api/users", UserRouter);
 app.use("/api/movies", MovieRouter);
+app.use("/api/lists", ListRoute);
 
 
 // Porta do servidor

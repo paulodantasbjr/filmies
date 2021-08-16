@@ -1,5 +1,5 @@
 import {Request, Response} from "express";
-import {MovieModel} from '@models/MoviesModel'
+import {MovieModel} from '@models/MovieModel'
 
 
 export const movieController = {
@@ -13,11 +13,15 @@ export const movieController = {
       }
 
       const movie = new MovieModel(data);
-
       if (! movie) {
         return res.status(400).json({error: "Erro ao cadastrar!"})
       }
+
       const savedMovie = await movie.save();
+      if (! savedMovie) {
+        return res.status(400).json({error: "Erro ao cadastrar!"})
+      }
+
 
       res.status(201).json({msg: "Cadastrado com sucesso!"})
 
