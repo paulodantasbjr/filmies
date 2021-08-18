@@ -25,4 +25,5 @@ export const MainStyled = styled.main`
 
   color: ${({ theme }) => theme.colors.white};
   background: ${({ theme }) => theme.colors.background};
+  padding: 3rem;
 `
