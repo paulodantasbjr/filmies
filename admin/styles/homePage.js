@@ -8,6 +8,7 @@ export const DashboardStyled = styled.div`
   justify-content: space-between;
   .top-container {
     flex: 1;
+    margin-bottom: 1rem;
 
     display: flex;
     justify-content: space-between;
@@ -24,7 +25,20 @@ export const DashboardStyled = styled.div`
       gap: 2rem;
     }
   }
-  .section-container {
+  .card-container {
+    flex: 2;
+    margin-bottom: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  .main-container {
     flex: 4;
+    margin-bottom: 1rem;
+  }
+  .sub-container {
+    flex: 3;
   }
 `
