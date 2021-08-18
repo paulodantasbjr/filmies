@@ -4,6 +4,10 @@ import { Title } from '../components/Title'
 import { Avatar } from '../components/Avatar'
 import { Icons } from '../components/Icons'
 import { Cards } from '../components/Cards'
+import { ChartLineFilms } from '../components/FirstCharts/Films'
+import { ChartPieFilms } from '../components/SecondCharts/Films'
+import { ChartLineSeries } from '../components/FirstCharts/Series'
+import { ChartPieSeries } from '../components/SecondCharts/Series'
 
 const Home = () => {
   return (
@@ -29,22 +33,21 @@ const Home = () => {
 
           <Cards title='Total' total='215 videos' rate='4.6' />
         </div>
-        <div className='main-container'>
-          <div className=''>
-            <h2>grafico filme</h2>
+        <div className='films-container'>
+          <div className='left-container'>
+            <ChartLineFilms />
           </div>
-          <div className=''>
-            <h2>grafico serie</h2>
-          </div>
-          <div className=''>
-            <h2>grafico dos 2</h2>
+          <div className='right-container'>
+            <ChartPieFilms />
           </div>
         </div>
-        <div className='sub-container'>
-          <div className=''>
-            <h2>grafico de genero</h2>
+        <div className='series-container'>
+          <div className='left-container'>
+            <ChartLineSeries />
           </div>
-          <div className=''>grafico genero dos 2</div>
+          <div className='right-container'>
+            <ChartPieSeries />
+          </div>
         </div>
       </DashboardStyled>
     </Layout>

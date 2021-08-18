@@ -6,7 +6,7 @@ import { IconStyled } from './styled'
 export const Icons = () => {
   return (
     <IconStyled>
-      <Link href=''>
+      <Link href='/'>
         <a>
           <IoNotifications />
         </a>

@@ -34,11 +34,32 @@ export const DashboardStyled = styled.div`
     justify-content: space-between;
     gap: 3rem;
   }
-  .main-container {
-    flex: 4;
-    margin-bottom: 1rem;
-  }
-  .sub-container {
+  .films-container {
     flex: 3;
+
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+
+    gap: 2rem;
+    .left-container {
+      width: 70%;
+    }
+    .right-container {
+      width: 30%;
+    }
+  }
+  .series-container {
+    flex: 3;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    .left-container {
+      width: 70%;
+    }
+    .right-container {
+      width: 30%;
+    }
   }
 `
