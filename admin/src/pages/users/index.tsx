@@ -1,4 +1,3 @@
-import { AddIcon, EditIcon } from '@chakra-ui/icons'
 import {
   Box,
   Flex,
@@ -13,7 +12,10 @@ import {
   Th,
   Td,
   Tfoot,
+  Icon,
 } from '@chakra-ui/react'
+import { RiEditFill, RiAddFill } from 'react-icons/ri'
+
 import { Header } from '../../components/Header'
 import { Sidebar } from '../../components/Sidebar'
 import { Pagination } from '../../components/Pagination'
@@ -34,7 +36,7 @@ export default function UserList() {
               as='a'
               size='sm'
               colorScheme='purple'
-              leftIcon={<AddIcon />}
+              leftIcon={<Icon as={RiAddFill} />}
             >
               Criar novo
             </Button>
@@ -72,7 +74,7 @@ export default function UserList() {
                     as='a'
                     size='sm'
                     colorScheme='purple'
-                    leftIcon={<EditIcon />}
+                    leftIcon={<Icon as={RiEditFill} />}
                   >
                     Editar
                   </Button>
