@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import {
   Box,
   Flex,
@@ -37,14 +38,16 @@ export default function ProductList() {
             <Heading size='lg' fontWeight='normal' mr={['4', '0']}>
               Produtos
             </Heading>
-            <Button
-              as='a'
-              size='sm'
-              colorScheme='purple'
-              leftIcon={<Icon as={RiAddFill} />}
-            >
-              {isMobileVersion ? 'Criar novo' : ''}
-            </Button>
+            <Link href='/products/create' passHref>
+              <Button
+                as='a'
+                size='sm'
+                colorScheme='purple'
+                leftIcon={<Icon as={RiAddFill} />}
+              >
+                {isMobileVersion ? 'Criar novo' : ''}
+              </Button>
+            </Link>
           </Flex>
 
           <Table variant='simple'>

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import {
   Box,
   Flex,
@@ -56,7 +57,11 @@ export default function UserList() {
           </VStack>
           <Flex mt='8' justify='flex-end'>
             <HStack spacing='4'>
-              <Button colorScheme='blackAlpha'>Cancelar</Button>
+              <Link href='/products' passHref>
+                <Button as='a' colorScheme='blackAlpha'>
+                  Cancelar
+                </Button>
+              </Link>
               <Button colorScheme='purple'>Salvar</Button>
             </HStack>
           </Flex>
