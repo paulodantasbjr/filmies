@@ -13,6 +13,7 @@ import {
   Td,
   Tfoot,
   Icon,
+  useBreakpointValue,
 } from '@chakra-ui/react'
 import { RiEditFill, RiAddFill } from 'react-icons/ri'
 
@@ -21,15 +22,19 @@ import { Sidebar } from '../../components/Sidebar'
 import { Pagination } from '../../components/Pagination'
 
 export default function UserList() {
+  const isMobileVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  })
   return (
     <Box>
       <Header />
       <Flex w='100%' my='6' maxW={1480} mx='auto' px='6'>
         <Sidebar />
 
-        <Box flex='1' borderRadius={8} p='8' bg='gray.200'>
+        <Box flex='1' borderRadius={8} p={['2', '8']} bg='gray.200'>
           <Flex mb='8' justify='space-between' align='center'>
-            <Heading size='lg' fontWeight='normal'>
+            <Heading size='lg' fontWeight='normal' mr={['4', '0']}>
               Usuarios
             </Heading>
             <Button
@@ -38,27 +43,31 @@ export default function UserList() {
               colorScheme='purple'
               leftIcon={<Icon as={RiAddFill} />}
             >
-              Criar novo
+              {isMobileVersion ? 'Criar novo' : ''}
             </Button>
           </Flex>
 
           <Table variant='simple'>
             <Thead>
               <Tr>
-                <Th>
-                  <Checkbox colorScheme='purple' borderColor='gray.500' />
-                </Th>
+                {isMobileVersion && (
+                  <Th px='6'>
+                    <Checkbox colorScheme='purple' borderColor='gray.500' />
+                  </Th>
+                )}
                 <Th>Usuarios</Th>
-                <Th>Tipo</Th>
-                <Th>Data de cadastro</Th>
+                {isMobileVersion && <Th>Tipo</Th>}
+                {isMobileVersion && <Th>Data de cadastro</Th>}
                 <Th></Th>
               </Tr>
             </Thead>
             <Tbody>
               <Tr>
-                <Td>
-                  <Checkbox colorScheme='purple' borderColor='gray.500' />
-                </Td>
+                {isMobileVersion && (
+                  <Td px='6'>
+                    <Checkbox colorScheme='purple' borderColor='gray.500' />
+                  </Td>
+                )}
                 <Td>
                   <Box>
                     <Text fontWeight='bold'>Paulo Dantas</Text>
@@ -67,8 +76,9 @@ export default function UserList() {
                     </Text>
                   </Box>
                 </Td>
-                <Td>Administrador</Td>
-                <Td>24 de Agosto, 2021</Td>
+                {isMobileVersion && <Td>Administrador</Td>}
+
+                {isMobileVersion && <Td>24 de Agosto, 2021</Td>}
                 <Td>
                   <Button
                     as='a'
@@ -76,14 +86,14 @@ export default function UserList() {
                     colorScheme='purple'
                     leftIcon={<Icon as={RiEditFill} />}
                   >
-                    Editar
+                    {isMobileVersion ? 'Editar' : ''}
                   </Button>
                 </Td>
               </Tr>
             </Tbody>
             <Tfoot>
               <Tr>
-                <Th>Total</Th>
+                <Th px={['4', '4', '6']}>Total</Th>
                 <Th>1</Th>
               </Tr>
             </Tfoot>
