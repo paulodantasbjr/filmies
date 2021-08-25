@@ -21,9 +21,10 @@ export const Header = () => {
       h='28'
       w='100%'
       maxW={1480}
-      mx='auto'
       px='6'
+      mx='auto'
       align='center'
+      justify='space-between'
     >
       {!isMobileVersion && (
         <IconButton
@@ -40,7 +41,7 @@ export const Header = () => {
 
       {isMobileVersion && <Search />}
 
-      <Flex align='center' ml='auto'>
+      <Flex align='center'>
         <Notifications />
 
         <Profile isMobileVersion={isMobileVersion} />

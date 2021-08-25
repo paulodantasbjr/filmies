@@ -4,13 +4,12 @@ import { RiSearch2Line } from 'react-icons/ri'
 export const Search = () => {
   return (
     <Flex
-      as='label'
       position='relative'
-      flex='1'
       py='3'
       px='2'
       ml='6'
-      maxW='400px'
+      flex='1'
+      maxW='500px'
       bg='gray.200'
       borderRadius='full'
     >
